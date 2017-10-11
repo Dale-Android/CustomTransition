@@ -2,9 +2,8 @@ package com.djx.customtransition;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.transition.ChangeTransform;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;

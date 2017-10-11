@@ -13,11 +13,6 @@
         android:layout_gravity="center_horizontal"
         android:text="Start Scenes Change" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello" />
-
     <FrameLayout
         android:id="@+id/scene_root"
         android:layout_width="match_parent"

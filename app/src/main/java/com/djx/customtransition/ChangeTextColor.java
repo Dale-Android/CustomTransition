@@ -12,7 +12,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class ChangeTextColor extends Transition {
-    private static final String PROPNAME_TEXT_COLOR = "android:ChangeTextColor:textColor";
+
+    private static final String PROPNAME_TEXT_COLOR = "com.djx.customtransition:ChangeTextColor:textColor";
 
     public ChangeTextColor() {
     }
@@ -23,7 +24,6 @@ public class ChangeTextColor extends Transition {
 
     private void captureValues(TransitionValues transitionValues) {
         if (transitionValues.view instanceof TextView) {
-            int c = ((TextView) transitionValues.view).getCurrentTextColor();
             transitionValues.values.put(PROPNAME_TEXT_COLOR,
                     ((TextView) transitionValues.view).getCurrentTextColor());
         }
@@ -37,7 +37,6 @@ public class ChangeTextColor extends Transition {
     @Override
     public void captureEndValues(TransitionValues transitionValues) {
         captureValues(transitionValues);
-//        transitionValues.values.put(PROPNAME_TEXT_COLOR, 0xff000000);
     }
 
     @Override
@@ -52,19 +51,10 @@ public class ChangeTextColor extends Transition {
             int start = (Integer) startValues.values.get(PROPNAME_TEXT_COLOR);
             int end = (Integer) endValues.values.get(PROPNAME_TEXT_COLOR);
             if (start != end) {
-//                setDuration(3000);
-                textView.setTextColor(end);
                 return ObjectAnimator.ofObject(textView, "textColor",
                         new ArgbEvaluator(), start, end);
             }
         }
         return null;
-    }
-
-    @Override
-    public String[] getTransitionProperties() {
-        return new String[] {
-            PROPNAME_TEXT_COLOR
-        };
     }
 }
