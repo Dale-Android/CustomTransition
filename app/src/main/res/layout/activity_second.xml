@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world"
-        android:textSize="32sp"
+        android:textSize="@dimen/end_text_size"
         android:background="@color/bg_end"
         android:textColor="@color/colorAccent"
         android:transitionName="hello"/>
